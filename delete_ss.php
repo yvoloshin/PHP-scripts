@@ -1,16 +1,21 @@
 <?php
 
-echo getcwd() . "\n";
-$dir = getcwd(); // "C:\PHP\test_files"; 
+/* This script deletes social security numbers from all files in the in the current working directory.
+   All file names are placed into an array. Then the contents of each file are read into a string and 
+   the string is searched using preg_match. If a social security number is found, then it is replaced 
+   by "ss number deleted" using preg_replace.
+*/
+
+echo "Current directory is: ";
+echo getcwd()
+echo "<br />";
+$dir = getcwd();
 $dh  = opendir($dir);
 while (false !== ($filename = readdir($dh))) {
     $files[] = $filename;
 }
-
 sort($files);
-
 print_r($files);
-
 foreach($files as $value) {
 	echo "<br />";
 	echo $value;
