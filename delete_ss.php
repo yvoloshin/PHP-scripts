@@ -28,11 +28,11 @@ foreach($files as $value) {
 		  if (fwrite($file, $new_contents)) {
 			echo "ss number deleted";
 			echo "<br />";
-			} else {
-			  echo "cannot write to file $value";
-			  echo "<br />";
-			}
-			fclose($file);
+		  } else {
+		    echo "cannot write to file $value";
+		    echo "<br />";
+		  }
+		  fclose($file);
 		} else {
 		  fclose($file);
 		}
